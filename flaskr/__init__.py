@@ -1,5 +1,4 @@
 import os
-from re import sub
 from flask import Flask, render_template, request
 
 from . import substitution, shift, affine, vigenere
@@ -27,6 +26,9 @@ def create_app(test_config=None):
         pass
 
     # a simple page that says hello
+    @app.route('/', methods=['GET'])
+    def index():
+        return render_template('index.html')
 
 
     app.register_blueprint(substitution.bp)

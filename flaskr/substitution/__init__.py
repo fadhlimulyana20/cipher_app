@@ -1,7 +1,7 @@
 from flaskr.substitution.encrypt import encrypt
 from flask import (Blueprint, request, render_template)
-from encrypt import encrypt
-from decrypt import decrypt
+from .encrypt import encrypt
+from .decrypt import decrypt
 
 bp = Blueprint('substitution', __name__, url_prefix='/substitution')
 

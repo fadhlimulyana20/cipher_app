@@ -1,6 +1,6 @@
 from flask import (Blueprint, request, render_template)
-from decrypt import decrypt
-from encrypt import encrypt
+from .decrypt import decrypt
+from .encrypt import encrypt
 
 bp = Blueprint('shift', __name__, url_prefix='/shift')
 
@@ -38,6 +38,6 @@ def index():
             data['output_text'] = decrypt(
                 input_text, shift).replace(" ", "")
 
-        return render_template('index.html', data=data)
+        return render_template('shift/index.html', data=data)
 
-    return render_template('index.html', data=data)
+    return render_template('shift/index.html', data=data)
