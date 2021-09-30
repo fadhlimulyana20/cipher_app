@@ -1,7 +1,8 @@
 import os
 from re import sub
 from flask import Flask, render_template, request
-from . import substitution, shift, affine
+
+from . import substitution, shift, affine, vigenere
 
 
 def create_app(test_config=None):
@@ -31,4 +32,5 @@ def create_app(test_config=None):
     app.register_blueprint(substitution.bp)
     app.register_blueprint(shift.bp)
     app.register_blueprint(affine.bp)    
+    app.register_blueprint(vigenere.bp) 
     return app
